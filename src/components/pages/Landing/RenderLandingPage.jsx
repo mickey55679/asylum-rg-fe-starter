@@ -32,6 +32,7 @@ function RenderLandingPage(props) {
       </div>
 
       {/* Graphs Section: Add code here for the graphs section for your first ticket */}
+      {/* begining of added code for ticket one */}
       <div className="graphs-section">
         <div className="grant-rates-by-office-graph-container">
           <img
@@ -58,6 +59,7 @@ function RenderLandingPage(props) {
           <p>Search Grant Rates Over Time</p>
         </div>
       </div>
+      {/* end of added code for ticket one */}
       <div className="view-more-data-btn-container">
         <Button
           type="default"
