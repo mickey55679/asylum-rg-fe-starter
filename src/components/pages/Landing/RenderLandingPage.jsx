@@ -59,7 +59,6 @@ function RenderLandingPage(props) {
           <p>Search Grant Rates Over Time</p>
         </div>
       </div>
-      {/* end of added code for ticket one */}
       <div className="view-more-data-btn-container">
         <Button
           type="default"
@@ -68,7 +67,7 @@ function RenderLandingPage(props) {
         >
           View the Data
         </Button>
-    
+
         <Button
           type="default"
           style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
@@ -76,6 +75,7 @@ function RenderLandingPage(props) {
           Download the Data
         </Button>
       </div>
+      {/* end of added code for ticket one */}
 
       <div className="middle-section">
         <div className="hrf-img-container">
@@ -95,7 +95,46 @@ function RenderLandingPage(props) {
       </div>
       <div>
         {/* Bottom Section: Add code here for the graphs section for your first ticket */}
-        {/* <div className="bottom-section">*/}
+        <div className="bottom-section">
+          <h1>Systemic Disparity Insights</h1>
+          <div className="first-data-point-container">
+            <h2>36%</h2>
+            <h3>
+              By the end of the Trump administration, the average asylum office
+              grant rate had fallen 36 percent from an average of 44 percent in
+              fiscal year 2016 to 28 percent in fiscal year 2020
+            </h3>
+          </div>
+          <div className="second-data-point-container">
+            <h2>5%</h2>
+            <h3>
+              The New York asylum office grant rate dropped to 5 percent in
+              fiscal year 2020
+            </h3>
+          </div>
+          <div className="third-data-point-container">
+            <h2>6x Lower</h2>
+            <h3>
+              Between fiscal year 2017 and 2020, the New York asylumm office's
+              average grant rate was six times lower than the San Francisco
+              asylum office.
+            </h3>
+          </div>
+        </div>
+        <div className="read-more-btn">
+          <button
+            onClick={() =>
+              window.open(
+                'https://humanrightsfirst.org/library/uscis-records-reveal-systemic-disparities-in-asylum-decisions/',
+                '_blank',
+                'noreferrer'
+              )
+            }
+          >
+            <span>Read More</span>
+          </button>
+        </div>
+
         <p onClick={() => scrollToTop()} className="back-to-top">
           Back To Top ^
         </p>
