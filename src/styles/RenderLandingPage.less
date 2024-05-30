@@ -187,9 +187,15 @@
   }
   .read-more-btn button {
     background-color: @main-color;
-      color: white; 
-      padding: 4px 15px;            
+      color: white;   
+      padding: 4px 15px;  
+       transition: transform 0.3s ease;        
   }
+   .read-more-btn button:hover {
+      padding: 4px 15px; 
+      transform: scale(1.05);
+
+   }
 
 .ant-btn:hover {
   border-color: @secondary-color !important;
