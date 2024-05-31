@@ -13,6 +13,7 @@ import { resetVisualizationQuery } from '../../../state/actionCreators';
 import { colors } from '../../../styles/data_vis_colors';
 import ScrollToTopOnMount from '../../../utils/scrollToTopOnMount';
 
+// Get the API URLs from environment variables
 const fiscalUrl = process.env.REACT_APP_FISCAL_URL;
 const citizenURL = process.env.REACT_APP_CITIZEN_URL;
 
@@ -57,6 +58,7 @@ function GraphWrapper(props) {
     }
   }
 
+  // Function to fetch data from the API and update state
   async function updateStateWithNewData(
     years,
     view,
@@ -70,6 +72,7 @@ function GraphWrapper(props) {
       console.log('Fiscal data:', fisData);
       console.log('Citizenship data:', citData);
 
+      // Fetch fiscal data for all offices if office is not specified
       if (office === 'all' || !office) {
         const fisResponse = await axios.get(fiscalUrl, {
           params: {
@@ -78,7 +81,9 @@ function GraphWrapper(props) {
           },
         });
         fisData = fisResponse.data;
+        console.log('Fiscal data for all offices:', fisData);
       } else {
+        // Fetch fiscal data for a specific office
         const fisResponse = await axios.get(fiscalUrl, {
           params: {
             from: years[0],
@@ -87,7 +92,9 @@ function GraphWrapper(props) {
           },
         });
         fisData = fisResponse.data;
+        console.log(`Fiscal data for office ${office}:`, fisData);
 
+        // Fetch citizenship data for a specific office
         const citResponse = await axios.get(citizenURL, {
           params: {
             from: years[0],
@@ -96,9 +103,13 @@ function GraphWrapper(props) {
           },
         });
         citData = citResponse.data;
+        console.log(`Citizenship data for office ${office}:`, citData);
       }
 
+      // Combine fiscal data and citizenship data into one object
       const newData = { ...fisData, citizenshipResults: citData };
+      console.log('New data to be set in state:', newData);
+      // Call the state setting callback with the new data
       stateSettingCallback(view, office, [newData]);
     } catch (error) {
       console.error('Error fetching data:', error);
