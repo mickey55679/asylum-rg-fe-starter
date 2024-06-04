@@ -23,6 +23,7 @@ const Profile = () => {
     marginLeft: 'auto', 
     marginRight: 'auto',
   };
+ 
 
   const userInfoStyle = {
     textAlign: 'center',
@@ -32,13 +33,14 @@ const Profile = () => {
   console.log(user);
 
   return (
-    <div style={containerStyle}>
-      <img src={user?.picture} alt="Profile" style={imageStyle} />
-      <div style={userInfoStyle}>
-        <h2>{user?.name}</h2>
-        <p>{user?.email}</p>
+      <div style={containerStyle}>
+        <img src={user?.picture} alt="Profile" style={imageStyle} />
+        <div style={userInfoStyle}>
+          <h2>{user?.name}</h2>
+          <p>{user?.email}</p>
+        </div>
       </div>
-    </div>
+
   );
 };
 
