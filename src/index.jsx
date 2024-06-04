@@ -24,6 +24,7 @@ import reducer from './state/reducers';
 import { colors } from './styles/data_vis_colors';
 // import { Auth0Provider } from '@auth0/auth0-react';
 import Auth0ProviderWithHistory from './auth0-provider-with-history';
+import Profile from './Profile';
 
 const { primary_accent_color } = colors;
 
@@ -59,6 +60,7 @@ export function App() {
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/graphs" component={GraphsContainer} />
+        <Route path="/profile" component={Profile} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer

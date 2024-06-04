@@ -33,7 +33,7 @@ function HeaderContent() {
         <Link to="/graphs" style={{ color: '#E2F0F7' }}>
           Graphs
         </Link>
-        {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+        {isAuthenticated ? <div><Link to="/profile" style={{ color: '#E2F0F7' }} >Profile</Link>  <LogoutButton /></div>: <LoginButton />}
       </div>
     </div>
   );
